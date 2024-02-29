@@ -156,7 +156,7 @@ class TransformersSeqClassifierHandler(BaseHandler, ABC):
             if input_text is None:
                 input_text = data.get("body")
             if isinstance(input_text, (bytes, bytearray)):
-                input_text = input_text.decode("utf-8")
+                input_text = input_text.decode("utf-8"，'ignore')
             if (
                 self.setup_config["captum_explanation"]
                 and not self.setup_config["mode"] == "question_answering"
@@ -356,7 +356,7 @@ class TransformersSeqClassifierHandler(BaseHandler, ABC):
             logger.warning("Captum Explanation is not chosen and will not be available")
 
         if isinstance(text, (bytes, bytearray)):
-            text = text.decode("utf-8")
+            text = text.decode("utf-8"，'ignore')
         text_target = ast.literal_eval(text)
 
         if not self.setup_config["mode"] == "question_answering":
