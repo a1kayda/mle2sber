@@ -1,0 +1,13 @@
+{
+ "model_name":"/home/model-server/transformer_hf/rubert-tiny2-sentiment",
+ "mode":"sequence_classification",
+ "do_lower_case":true,
+ "num_labels":3,
+ "save_mode":"pretrained",
+ "max_length":"128",
+ "captum_explanation":false,
+ "embedding_name": "bert",
+ "FasterTransformer":false,
+ "BetterTransformer":false,
+ "model_parallel":false
+}
