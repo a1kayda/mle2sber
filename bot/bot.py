@@ -27,7 +27,7 @@ async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token('7047738745:AAEw3T1g6GOQtZUF-NhQinNbLq0vOseqyMA').build()
+    application = ApplicationBuilder().token(os.environ['TELEGRAM_TOKEN']).build()
     
     start_handler = CommandHandler('start', start)
     sentiment_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), sentiment)
