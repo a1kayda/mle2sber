@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  bot:
+    build: bot/
+    environment:
+      - TELEGRAM_TOKEN="<YOUR-BOT-TOKEN>"
+    network_mode: host
+    depends_on:
+      - serving
+    restart: always
+  serving:
+    image: pandaczm/torchserve_m1:transformers_4.10.0
+    volumes: 
+      - ./model_store:/home/model-server/model-store
+      -  ./transformer_hf:/home/model-server/transformer_hf
+    ports:
+      - 127.0.0.1:8080:8080
+      - 127.0.0.1:8081:8081
+      - 127.0.0.1:8082:8082
