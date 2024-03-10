@@ -1,4 +1,4 @@
-# mle2sber
+
 
 This repo contain backend for telegram-bot and serving model for sentiment analysis with TorchServe
 
